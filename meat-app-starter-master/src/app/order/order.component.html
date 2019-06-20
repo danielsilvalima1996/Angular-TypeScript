@@ -21,8 +21,8 @@
         </div>
 
         <div class="col-xs-12 col-sm-3">
-          <span class="help-block pull-right has-error-block" *ngIf="orderForm.hasError('teste')">
-            <i class="fa fa-remove"></i>Email-s não conferem</span>
+          <span class="help-block pull-right has-error-block" *ngIf="orderForm.hasError('emailsNotMatch')"><i
+              class="fa fa-remove"></i> Email-s não conferem</span>
         </div>
 
         <div class="col-sm-6 col-xs-12">
@@ -91,7 +91,7 @@
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Formas de Pagamento:</p>
 
-          <mt-radio [options]="paymentOptions" formControlName="paymentOptions"></mt-radio>
+          <mt-radio [options]="paymentOption" formControlName="paymentOption"></mt-radio>
 
         </div>
         <!-- /.col -->

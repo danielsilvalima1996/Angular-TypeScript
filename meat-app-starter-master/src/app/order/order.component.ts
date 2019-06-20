@@ -20,7 +20,7 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8;
 
-  paymentOptions: RadioOption[] = [
+  paymentOption: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
     { label: 'Cartão Refeição', value: 'REF' }
@@ -40,22 +40,20 @@ export class OrderComponent implements OnInit {
       address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
-      paymentOptions: this.formBuilder.control('', [Validators.required])
-    }, { Validators: OrderComponent.equalsTo })
+      paymentOption: this.formBuilder.control('', [Validators.required])
+    }, { validator: OrderComponent.equalsTo })
   }
 
   static equalsTo(group: AbstractControl): { [key: string]: boolean } {
-    const email = group.get('email');
-    const emailConfirmation = group.get('emailConfirmation');
-
+    const email = group.get('email')
+    const emailConfirmation = group.get('emailConfirmation')
     if (!email || !emailConfirmation) {
       return undefined
     }
-
     if (email.value !== emailConfirmation.value) {
-      return { teste: true }
+      return { emailsNotMatch: true }
     }
-    return undefined;
+    return undefined
   }
 
   itemsValue(): number {
