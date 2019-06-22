@@ -7,12 +7,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shopping-cart.service";
 import { RestaurantsService } from "app/restaurants/restaurants.service";
 import { OrderService } from "app/order/order.service";
+import { SnackbarComponent } from './message/snackbar/snackbar.component';
 
 @NgModule({
     declarations: [
         InputContainertComponent,
         RadioComponent,
-        RatingComponent
+        RatingComponent,
+        SnackbarComponent
     ],
     imports: [
         CommonModule,
@@ -25,7 +27,8 @@ import { OrderService } from "app/order/order.service";
         ReactiveFormsModule,
         InputContainertComponent,
         RadioComponent,
-        RatingComponent
+        RatingComponent,
+        SnackbarComponent
     ]
 })
 
