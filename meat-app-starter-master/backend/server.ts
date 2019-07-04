@@ -1,10 +1,8 @@
+import * as jsonServer from 'json-server'
+import { Express } from 'express'
 import * as fs from 'fs'
-
 import * as https from 'https'
 
-import {Express} from 'express'
-
-import * as jsonServer from 'json-server'
 
 const server = jsonServer.create()
 
